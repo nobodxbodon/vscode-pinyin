@@ -1,0 +1,49 @@
+{
+  "name": "pinyin",
+  "displayName": "pinyin",
+  "description": " 让VSCode可以用拼音来匹配中文标识符，实现中文编程",
+  "version": "1.11.1",
+  "publisher": "cleverdango",
+  "engines": {
+    "vscode": "^1.10.2"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Plugin pinyin config. 拼音插件配置",
+      "properties": {
+        "pinyin.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否启用拼音插件"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.32",
+    "@types/mz": "0.0.30",
+    "@types/node": "^6.0.40",
+    "mocha": "^2.3.3",
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0"
+  },
+  "dependencies": {
+    "mz": "^2.6.0",
+    "pinyinlite": "^1.2.0",
+    "recursive-fs": "^1.0.0"
+  }
+}
